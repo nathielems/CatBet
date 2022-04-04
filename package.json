@@ -4,9 +4,9 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest dist",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node ./dist/index.js"
   },
   "repository": {
@@ -22,9 +22,12 @@
   "homepage": "https://github.com/nathielems/CatBet#readme",
   "dependencies": {
     "@types/cors": "^2.8.12",
+    "axios": "^0.26.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "serverless-offline": "^8.5.0",
+    "mongoose": "^6.2.9",
+    "serverless-http": "^2.7.0",
     "serverless-plugin-typescript": "^2.1.1",
     "source-map-support": "^0.5.21"
   },
@@ -33,6 +36,8 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "jest": "^27.5.1",
+    "serverless-offline": "^8.5.0",
+    "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.14.1",

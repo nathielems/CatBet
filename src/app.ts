@@ -1,8 +1,11 @@
-const express = require("express");
-const bodyParser = require('body-parser');
-const cors = require("cors")
+import express from "express";
+import bodyParser from 'body-parser';
+import cors from "cors";
 
-const routes = require('./routes/catBet.routes');
+import './database';
+
+import fishRoutes from "./routes/fish.routes"
+import betRoutes from "./routes/bet.routes"
 
 class App {
   server: any;
@@ -17,7 +20,8 @@ class App {
   }
 
   routes() {
-    this.server.use("/", routes)
+    this.server.use("/fish", fishRoutes)
+    this.server.use("/bet", betRoutes)
   }
 }
 
